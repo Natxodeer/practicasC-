@@ -1,0 +1,6 @@
+# Ignore folders and files from Visual Studio
+**/obj/
+**/bin/
+**/*.sln
+**/*.csproj
+.vs/
