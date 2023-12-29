@@ -17,27 +17,30 @@ while (option != 0)
     }
     else option = int.Parse(optionString);
 
-    if (option == 1)
+    switch (option)
     {
-        BuildArrayN(option);
-    }
-    if (option == 2)
-    {
-        BuildArrayStringN(option);
+        case 1:
+            BuildArrayN(option);
+            break;
+        case 2:
+            BuildArrayStringN(option);
+            break;
+        case 3:
+            {
+                int[] numArray = new int[TAM_MAX];
+                int[] numArray2 = new int[TAM_MAX];
+                int[] result = new int[TAM_MAX];
+                Console.Write("Give me the length of the array: ");
+                int arrayLength = Convert.ToInt32(Console.ReadLine());
+                ReadArray(numArray, arrayLength);
+                Console.Write("Give me the length of the array: ");
+                ReadArray(numArray2, arrayLength);
+                AddArray(numArray, numArray2, result, arrayLength);
+            }
+            break;
+
     }
 
-    if (option == 3)
-    {
-        int[] numArray = new int[TAM_MAX];
-        int[] numArray2 = new int[TAM_MAX];
-        int[] result = new int[TAM_MAX];
-        Console.Write("Give me the length of the array: ");
-        int arrayLength = Convert.ToInt32(Console.ReadLine());
-        ReadArray(numArray, arrayLength);
-        Console.Write("Give me the length of the array: ");
-        ReadArray(numArray2, arrayLength);
-        AddArray(numArray, numArray2,result, arrayLength);
-    }
 }
 
 void BuildArrayN(int option)
